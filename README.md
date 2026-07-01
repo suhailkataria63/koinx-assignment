@@ -4,7 +4,7 @@ A responsive React-based tax loss harvesting interface built for the KoinX assig
 
 ## Live Demo
 
-Live Demo: _Add deployed Vercel/Netlify link here_
+Live Demo: https://koinx-tax-assignment.vercel.app
 
 ## GitHub
 
