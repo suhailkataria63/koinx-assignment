@@ -1,79 +1,91 @@
-# React + TypeScript + Vite
+# KoinX Tax Loss Harvesting Assignment
+
+A responsive React-based tax loss harvesting interface built for the KoinX assignment. It shows pre-harvesting and after-harvesting capital gains, displays crypto holdings, and updates the after-harvesting view based on the assets selected by the user.
+
+## Live Demo
+
+Live Demo: _Add deployed Vercel/Netlify link here_
+
+## GitHub
+
+GitHub Repo: https://github.com/suhailkataria63/koinx-assignment
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Mock APIs
+- lucide-react
+
+## Features
+
+- Pre-harvesting capital gains card
+- Dynamic after-harvesting capital gains card
+- Real-time updates based on selected holdings
+- Individual holding selection
+- Select all / deselect all
+- Short-Term and Long-Term sorting
+- View all / show less holdings
+- Hover tooltip for full currency values
+- Hover tooltip for "How it works?"
+- Light and dark mode
+- Responsive layout
+- Loader and error states
+- Clean component-based structure
+
+## Business Logic
+
+- Net Capital Gains = Profits - Losses
+- Realised Capital Gains = Short-term net gains + Long-term net gains
+- After Harvesting initially mirrors Pre Harvesting
+- When a holding is selected:
+  - Positive STCG/LTCG gain is added to profits
+  - Negative STCG/LTCG gain is added to losses using `Math.abs`
+- The original capital gains API data is not mutated
+- Savings/reduction message appears only when post-harvesting capital gains are lower than pre-harvesting capital gains
+
+## Mock API
+
+- Holdings API is mocked locally
+- Capital Gains API is mocked locally
+- API delay is simulated to show a realistic loading state
 
 ## Assumptions
 
-- The mock holdings dataset is enriched for interaction testing so sorting, selection, and harvesting changes are easy to observe in the demo UI.
+- This is a frontend demo and not tax advice
+- The holdings dataset is enriched with a mix of profit/loss values to better demonstrate selection, sorting, and harvesting behavior
+- Amount to Sell is shown as the full holding amount when an asset is selected
+- Duplicate coin symbols are handled using generated stable IDs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Folder Structure
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+  api/
+  components/
+  data/
+  hooks/
+  types/
+  utils/
+  App.tsx
+  main.tsx
+  index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
+npm run build
+npm run lint
 ```
+
+## Deployment
+
+The app can be deployed on Vercel or Netlify.
+
+- Build command: `npm run build`
+- Output directory: `dist`
