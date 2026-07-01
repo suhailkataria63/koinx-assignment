@@ -1,5 +1,9 @@
 # React + TypeScript + Vite
 
+## Assumptions
+
+- The mock holdings dataset is enriched for interaction testing so sorting, selection, and harvesting changes are easy to observe in the demo UI.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

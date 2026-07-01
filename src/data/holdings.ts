@@ -9,12 +9,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.0015339999999994802,
     averageBuyPrice: 1.5863185433764244,
     stcg: {
-      balance: 0.0015339999999994802,
-      gain: 0.12858552735441697,
+      balance: 0.0010339999999994802,
+      gain: 1250,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.0005,
+      gain: -650,
     },
   },
   {
@@ -25,12 +25,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.00023999998390319965,
     averageBuyPrice: 3599.856066001555,
     stcg: {
-      balance: 0.00023999998390319965,
-      gain: 49.957471193511736,
+      balance: 0.0001599999839031996,
+      gain: 15200,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.00008,
+      gain: 6200,
     },
   },
   {
@@ -41,12 +41,12 @@ export const holdings: Holding[] = [
     totalHolding: 3.469446951953614e-17,
     averageBuyPrice: 221.42847548590152,
     stcg: {
-      balance: 3.469446951953614e-17,
-      gain: 5.043389846205066e-13,
+      balance: 2.469446951953614e-17,
+      gain: -950,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 1e-17,
+      gain: 320,
     },
   },
   {
@@ -58,11 +58,11 @@ export const holdings: Holding[] = [
     averageBuyPrice: 0.5227311370876341,
     stcg: {
       balance: 1.3172764293128694,
-      gain: 49.954151016387065,
+      gain: -4200,
     },
     ltcg: {
       balance: 1,
-      gain: 20,
+      gain: 1850,
     },
   },
   {
@@ -73,12 +73,12 @@ export const holdings: Holding[] = [
     totalHolding: 2.75145540184285,
     averageBuyPrice: 0.6880274617804887,
     stcg: {
-      balance: 2.75145540184285,
-      gain: 59.244262152615974,
+      balance: 2.00145540184285,
+      gain: -9800,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.75,
+      gain: -2600,
     },
   },
   {
@@ -89,12 +89,12 @@ export const holdings: Holding[] = [
     totalHolding: 696324.3075326696,
     averageBuyPrice: 0.00001637624055112482,
     stcg: {
-      balance: 696324.3075326696,
-      gain: 90.39943939952589,
+      balance: 496324.3075326696,
+      gain: -18500,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 200000,
+      gain: 4200,
     },
   },
   {
@@ -105,12 +105,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.0001580000000558357,
     averageBuyPrice: 1.4988059369185402,
     stcg: {
-      balance: 0.0001580000000558357,
-      gain: 0.01325954866665267,
+      balance: 0.0001080000000558357,
+      gain: 700,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.00005,
+      gain: -240,
     },
   },
   {
@@ -121,12 +121,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.005806999999992795,
     averageBuyPrice: 1.5405071277176852,
     stcg: {
-      balance: 0.005806999999992795,
-      gain: 0.48703014510873915,
+      balance: 0.003806999999992795,
+      gain: -1120,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.002,
+      gain: -780,
     },
   },
   {
@@ -137,12 +137,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.01,
     averageBuyPrice: 4.999247835735738,
     stcg: {
-      balance: 0.01,
-      gain: 0.016607521642642627,
+      balance: 0.006,
+      gain: 450,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.004,
+      gain: 220,
     },
   },
   {
@@ -153,12 +153,12 @@ export const holdings: Holding[] = [
     totalHolding: 5,
     averageBuyPrice: 0.018408606024462898,
     stcg: {
-      balance: 5,
-      gain: 0.5739069698776855,
+      balance: 3,
+      gain: 3800,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 2,
+      gain: -1100,
     },
   },
   {
@@ -169,12 +169,12 @@ export const holdings: Holding[] = [
     totalHolding: 1.4210854715202004e-14,
     averageBuyPrice: 0.07889041030290807,
     stcg: {
-      balance: 1.4210854715202004e-14,
-      gain: 3.9377509565538836e-15,
+      balance: 1.0210854715202e-14,
+      gain: -300,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 4e-15,
+      gain: 90,
     },
   },
   {
@@ -185,12 +185,12 @@ export const holdings: Holding[] = [
     totalHolding: 1.79,
     averageBuyPrice: 0,
     stcg: {
-      balance: 1.79,
-      gain: 0.0001558374,
+      balance: 1.29,
+      gain: 150,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.5,
+      gain: -75,
     },
   },
   {
@@ -201,12 +201,12 @@ export const holdings: Holding[] = [
     totalHolding: 150000,
     averageBuyPrice: 0,
     stcg: {
-      balance: 150000,
-      gain: 2.4345,
+      balance: 100000,
+      gain: -2600,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 50000,
+      gain: 900,
     },
   },
   {
@@ -217,12 +217,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.0004211938732637162,
     averageBuyPrice: 3909.792264648455,
     stcg: {
-      balance: 0.0004211938732637162,
-      gain: 89.40775336229291,
+      balance: 0.0002711938732637162,
+      gain: 12800,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.00015,
+      gain: -5400,
     },
   },
   {
@@ -233,12 +233,12 @@ export const holdings: Holding[] = [
     totalHolding: 5.961538207532868e-11,
     averageBuyPrice: 65.86759737193783,
     stcg: {
-      balance: 5.961538207532868e-11,
-      gain: 1.3437082981609774e-7,
+      balance: 3.961538207532868e-11,
+      gain: -420,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 2e-11,
+      gain: -160,
     },
   },
   {
@@ -249,12 +249,12 @@ export const holdings: Holding[] = [
     totalHolding: 3.1178615245153196e-11,
     averageBuyPrice: 0.03486178524947315,
     stcg: {
-      balance: 3.1178615245153196e-11,
-      gain: 8.285754875638759e-12,
+      balance: 2.117861524515319e-11,
+      gain: 210,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 1e-11,
+      gain: 80,
     },
   },
   {
@@ -265,12 +265,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.000047233224826389,
     averageBuyPrice: 9.172984515948809,
     stcg: {
-      balance: 0.000047233224826389,
-      gain: 0.06806151900976895,
+      balance: 0.000027233224826389,
+      gain: -1750,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.00002,
+      gain: 960,
     },
   },
   {
@@ -281,12 +281,12 @@ export const holdings: Holding[] = [
     totalHolding: 9.822542779147625e-11,
     averageBuyPrice: 0.005182145656093,
     stcg: {
-      balance: 9.822542779147625e-11,
-      gain: 2.412729290101157e-12,
+      balance: 6.822542779147625e-11,
+      gain: 640,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 3e-11,
+      gain: -260,
     },
   },
   {
@@ -297,12 +297,12 @@ export const holdings: Holding[] = [
     totalHolding: 2.2737367544323206e-13,
     averageBuyPrice: 0.011065778585432803,
     stcg: {
-      balance: 2.2737367544323206e-13,
-      gain: -8.563639733967655e-16,
+      balance: 1.57373675443232e-13,
+      gain: -180,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 7e-14,
+      gain: -70,
     },
   },
   {
@@ -313,12 +313,12 @@ export const holdings: Holding[] = [
     totalHolding: 3.325212327709437e-11,
     averageBuyPrice: 0.25960465528043797,
     stcg: {
-      balance: 3.325212327709437e-11,
-      gain: 5.736122725812298e-10,
+      balance: 2.325212327709437e-11,
+      gain: 5200,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 1e-11,
+      gain: 2300,
     },
   },
   {
@@ -329,12 +329,12 @@ export const holdings: Holding[] = [
     totalHolding: 1.063542780948968,
     averageBuyPrice: 0.01520546569793174,
     stcg: {
-      balance: 1.063542780948968,
-      gain: 0.048558741002894576,
+      balance: 0.663542780948968,
+      gain: -1250,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.4,
+      gain: 760,
     },
   },
   {
@@ -345,12 +345,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.04265758808550148,
     averageBuyPrice: 1.7040326829291739,
     stcg: {
-      balance: 0.04265758808550148,
-      gain: 2.1877356683780986,
+      balance: 0.02765758808550148,
+      gain: 1800,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.015,
+      gain: -920,
     },
   },
   {
@@ -361,12 +361,12 @@ export const holdings: Holding[] = [
     totalHolding: 0.0005424384664524931,
     averageBuyPrice: 6.539367177529248,
     stcg: {
-      balance: 0.0005424384664524931,
-      gain: -0.0030671061200917595,
+      balance: 0.0003424384664524931,
+      gain: -680,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 0.0002,
+      gain: -260,
     },
   },
   {
@@ -377,12 +377,12 @@ export const holdings: Holding[] = [
     totalHolding: 6.442993445432421e-7,
     averageBuyPrice: 0.453964789704584,
     stcg: {
-      balance: 6.442993445432421e-7,
-      gain: -2.3205780373028534e-7,
+      balance: 4.442993445432421e-7,
+      gain: -95,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 2e-7,
+      gain: 40,
     },
   },
   {
@@ -393,12 +393,12 @@ export const holdings: Holding[] = [
     totalHolding: 8.861,
     averageBuyPrice: 8.531798889329416e-7,
     stcg: {
-      balance: 8.861,
-      gain: 1.1043562716520403e-7,
+      balance: 5.861,
+      gain: 120,
     },
     ltcg: {
-      balance: 0,
-      gain: 0,
+      balance: 3,
+      gain: -55,
     },
   },
 ];

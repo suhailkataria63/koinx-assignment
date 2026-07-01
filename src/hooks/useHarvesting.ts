@@ -6,7 +6,7 @@ import {
   calculateSavings,
 } from '../utils/calculations'
 
-const VISIBLE_HOLDINGS_LIMIT = 8
+const VISIBLE_HOLDINGS_LIMIT = 4
 
 function getHoldingId(holding: Holding, index: number): string {
   return `${holding.coin}-${holding.coinName}-${index}`

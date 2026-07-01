@@ -1,9 +1,15 @@
-import { useEffect, useRef } from 'react'
+import { ArrowDown, ArrowUp } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { HoldingWithId } from '../types'
 import {
+  formatCompactCurrency,
   formatCurrency,
   formatNumber,
 } from '../utils/formatters'
+
+type SortDirection = 'asc' | 'desc'
+
+type SortKey = 'stcg' | 'ltcg' | null
 
 type HoldingsTableProps = {
   holdings: HoldingWithId[]
@@ -29,6 +35,17 @@ function getGainClassName(value: number): string {
   return 'text-slate-700 dark:text-slate-300'
 }
 
+function MoneyTooltip({ value }: { value: number }) {
+  return (
+    <span className="group relative inline-flex justify-end">
+      <span>{formatCompactCurrency(value)}</span>
+      <span className="pointer-events-none absolute bottom-full right-0 z-20 mb-2 whitespace-nowrap rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-800 opacity-0 shadow-lg transition group-hover:opacity-100 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100">
+        {formatCurrency(value)}
+      </span>
+    </span>
+  )
+}
+
 export function HoldingsTable({
   holdings,
   isAllSelected,
@@ -41,12 +58,53 @@ export function HoldingsTable({
   totalCount,
 }: HoldingsTableProps) {
   const selectAllCheckboxRef = useRef<HTMLInputElement>(null)
+  const [sortKey, setSortKey] = useState<SortKey>(null)
+  const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
 
   useEffect(() => {
     if (selectAllCheckboxRef.current) {
       selectAllCheckboxRef.current.indeterminate = isIndeterminate
     }
   }, [isIndeterminate])
+
+  const sortedHoldings = useMemo(() => {
+    if (!sortKey) {
+      return holdings
+    }
+
+    return [...holdings].sort((currentHolding, nextHolding) => {
+      const currentGain = currentHolding[sortKey].gain
+      const nextGain = nextHolding[sortKey].gain
+
+      return sortDirection === 'asc'
+        ? currentGain - nextGain
+        : nextGain - currentGain
+    })
+  }, [holdings, sortDirection, sortKey])
+
+  const handleSort = (nextSortKey: Exclude<SortKey, null>) => {
+    if (sortKey === nextSortKey) {
+      setSortDirection((currentDirection) =>
+        currentDirection === 'asc' ? 'desc' : 'asc',
+      )
+      return
+    }
+
+    setSortKey(nextSortKey)
+    setSortDirection('desc')
+  }
+
+  const renderSortIcon = (columnSortKey: Exclude<SortKey, null>) => {
+    if (sortKey !== columnSortKey) {
+      return null
+    }
+
+    return sortDirection === 'asc' ? (
+      <ArrowUp aria-hidden="true" size={13} />
+    ) : (
+      <ArrowDown aria-hidden="true" size={13} />
+    )
+  }
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-cardDark">
@@ -89,10 +147,24 @@ export function HoldingsTable({
                     Current Price
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
-                    Short-Term
+                    <button
+                      className="ml-auto inline-flex items-center gap-1 rounded text-xs font-semibold uppercase tracking-normal hover:text-koinxBlue focus:outline-none focus:ring-2 focus:ring-koinxBlue/30 dark:hover:text-koinxBlueLight"
+                      onClick={() => handleSort('stcg')}
+                      type="button"
+                    >
+                      Short-Term
+                      {renderSortIcon('stcg')}
+                    </button>
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
-                    Long-Term
+                    <button
+                      className="ml-auto inline-flex items-center gap-1 rounded text-xs font-semibold uppercase tracking-normal hover:text-koinxBlue focus:outline-none focus:ring-2 focus:ring-koinxBlue/30 dark:hover:text-koinxBlueLight"
+                      onClick={() => handleSort('ltcg')}
+                      type="button"
+                    >
+                      Long-Term
+                      {renderSortIcon('ltcg')}
+                    </button>
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
                     Amount to Sell
@@ -100,7 +172,7 @@ export function HoldingsTable({
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                {holdings.map((holding) => {
+                {sortedHoldings.map((holding) => {
                   const isSelected = selectedHoldingIds.has(holding.id)
 
                   return (
@@ -145,11 +217,11 @@ export function HoldingsTable({
                         </div>
                       </td>
                       <td className="px-4 py-4 text-right font-medium text-slate-900 dark:text-slate-100">
-                        {formatCurrency(holding.currentPrice)}
+                        <MoneyTooltip value={holding.currentPrice} />
                       </td>
                       <td className="px-4 py-4 text-right">
                         <div className={`font-semibold ${getGainClassName(holding.stcg.gain)}`}>
-                          {formatCurrency(holding.stcg.gain)}
+                          <MoneyTooltip value={holding.stcg.gain} />
                         </div>
                         <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                           {formatNumber(holding.stcg.balance)} {holding.coin}
@@ -157,7 +229,7 @@ export function HoldingsTable({
                       </td>
                       <td className="px-4 py-4 text-right">
                         <div className={`font-semibold ${getGainClassName(holding.ltcg.gain)}`}>
-                          {formatCurrency(holding.ltcg.gain)}
+                          <MoneyTooltip value={holding.ltcg.gain} />
                         </div>
                         <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                           {formatNumber(holding.ltcg.balance)} {holding.coin}
@@ -174,7 +246,7 @@ export function HoldingsTable({
               </tbody>
             </table>
           </div>
-          {totalCount > 8 ? (
+          {totalCount > 4 ? (
             <div className="border-t border-slate-200 px-4 py-3 text-center dark:border-slate-800">
               <button
                 className="text-sm font-semibold text-koinxBlue underline-offset-4 hover:underline dark:text-koinxBlueLight"

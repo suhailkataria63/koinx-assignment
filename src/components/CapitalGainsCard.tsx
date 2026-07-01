@@ -87,7 +87,7 @@ export function CapitalGainsCard({
         </div>
         {isBlue && savings > 0 ? (
           <p className="mt-3 text-sm font-medium text-white">
-            🎉 You are going to save upto {formatCurrency(savings)}
+            🎉 Your taxable capital gains are reduced by: {formatCurrency(savings)}
           </p>
         ) : null}
       </div>
