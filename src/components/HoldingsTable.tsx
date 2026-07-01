@@ -89,10 +89,10 @@ export function HoldingsTable({
                     Current Price
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
-                    Short-term
+                    Short-Term
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
-                    Long-term
+                    Long-Term
                   </th>
                   <th className="px-4 py-3 text-right font-semibold">
                     Amount to Sell
